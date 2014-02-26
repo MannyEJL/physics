@@ -11,17 +11,24 @@ solveFor = []
 known = ['vf', 'vi', 'a', 't', 'd']
 toSort1 = ['vf', 'vi', 'a', 't', 'd']
 toSort2 = ['vf', 'vi', 'a', 't', 'd']
+#Variables needed to solve equation:
+#				1				2			3			4			5
 checkList = ['a t vf vi', 'd t vf vi', 'a d t vi', 'a d t vf', 'a d vf vi']
 
 def eq1():
+	# vf=vi+at
     return Eq(data[0], data[1]+data[2]*data[3])
 def eq2():
+    # d=(vi+vf)/2 * t
     return Eq(data[4], ((data[1]+data[0])/2)*data[3])
 def eq3():
+    # d=vit+(at^2)/2
     return Eq(data[4], data[1]*data[3] + ((data[2]*data[3]**2)/2))
 def eq4():
+    # d=vft-(at^2)/2
     return Eq(data[4], data[0]*data[3] - ((data[2]*data[3]**2)/2))
 def eq5():
+    # vf^2=vi^2+2ad
     return Eq(data[0]**2, data[1]**2 + 2*data[2]*data[4])
 
 options = {0 : eq1,
