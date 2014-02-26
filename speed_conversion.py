@@ -15,13 +15,10 @@ Todo list:
 Features:
   -convert speeds
 '''
-from sympy import *
 # steps = []
 distanceUnits = ['ft', 'm', 'km']
 timeUnits = ['s', 'min', 'h']
 
-x = Symbol('x')
-pprint(factor(5*x+5))
 def validateInput(word):    
     while True:
         a = raw_input("Input your " + word + " unit [distance/time]: ").lower()
