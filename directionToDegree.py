@@ -1,10 +1,11 @@
 # Ex input: N 30 E
 # Ex output: 60
 import math
-a = raw_input('direction pls: ')
+a = raw_input('magnitude n direction pls, k thanks: ')
 b = a.split()
-print b
-b[1] = float(b[1])
+
+b[0] = float(b[0])
+b[2] = float(b[2])
 def directionToDegree(dir1, angle, dir2):
     directions = 'enws'
     plus = 'nw se en ws'
@@ -19,9 +20,8 @@ def directionToDegree(dir1, angle, dir2):
     print newAngle
     return newAngle
     
-c = math.radians(directionToDegree(b[0], b[1], b[2]))
-#Just some random vector with a magnitude of 10
-xcomp = math.cos(c) * 10
-ycomp = math.sin(c) * 10
-print xcomp
-print ycomp
+c = math.radians(directionToDegree(b[1], b[2], b[3]))
+xcomp = math.cos(c) * b[0]
+ycomp = math.sin(c) * b[0]
+print 'xcomp: {0:.2f}'.format(xcomp)
+print 'ycomp: {0:.2f}'.format(ycomp)
